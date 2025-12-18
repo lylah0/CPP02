@@ -6,7 +6,7 @@
 /*   By: lylrandr <lylrandr@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 13:34:37 by lylrandr          #+#    #+#             */
-/*   Updated: 2025/12/18 16:58:27 by lylrandr         ###   ########.fr       */
+/*   Updated: 2025/12/18 18:07:42 by lylrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ class Fixed{
 		Fixed(const float nb);
 		Fixed(const Fixed &src);
 		Fixed(const int value);
-		Fixed&	operator=(const Fixed &rhs);
 		~Fixed();
 
+		Fixed&	operator=(const Fixed &rhs);
 		int				getRawBits() const;
 		void			setRawBits(int const raw);
 		float			toFloat() const;
