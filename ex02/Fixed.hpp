@@ -6,7 +6,7 @@
 /*   By: lylrandr <lylrandr@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 13:34:37 by lylrandr          #+#    #+#             */
-/*   Updated: 2025/12/18 19:30:01 by lylrandr         ###   ########.fr       */
+/*   Updated: 2025/12/19 14:53:01 by lylrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ class Fixed{
 		Fixed(const int value);
 		~Fixed();
 
-		Fixed&						operator>(const Fixed &rhs);
-		Fixed&						operator<(const Fixed &rhs);
-		Fixed&						operator>=(const Fixed &rhs);
-		Fixed&						operator<=(const Fixed &rhs);
-		Fixed&						operator==(const Fixed &rhs);
-		Fixed&						operator!=(const Fixed &rhs);
+		bool						operator>(const Fixed& rhs) const;
+		bool						operator<(const Fixed& rhs) const;
+		bool						operator>=(const Fixed& rhs) const;
+		bool						operator<=(const Fixed& rhs) const;
+		bool						operator==(const Fixed& rhs) const;
+		bool						operator!=(const Fixed& rhs) const;
 		Fixed&						operator=(const Fixed &rhs);
 		Fixed&						operator+(const Fixed &rhs);
 		Fixed&						operator-(const Fixed &rhs);
@@ -46,10 +46,11 @@ class Fixed{
 		float						toFloat() const;
 		int							toInt() const;
 
-		static std::string&			min(std::string& nb1, std::string& nb2);
-		static const std::string&	minconst(const std::string& nb1, const std::string& nb2);
-		static std::string&			max(std::string& nb1, std::string& nb2);
-		static const std::string&	maxconst(const std::string& nb1, const std::string& nb2);
+		static						Fixed& min(Fixed& a, Fixed& b);
+		static const 				Fixed& min(const Fixed& a, const Fixed& b);
+		static						Fixed& max(Fixed& a, Fixed& b);
+		static const				Fixed& max(const Fixed& a, const Fixed& b);
+
 };
 
 std::ostream&	operator<<(std::ostream& obj, const Fixed& rhs);

@@ -6,7 +6,7 @@
 /*   By: lylrandr <lylrandr@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 17:41:47 by lylrandr          #+#    #+#             */
-/*   Updated: 2025/12/18 19:31:33 by lylrandr         ###   ########.fr       */
+/*   Updated: 2025/12/19 14:57:01 by lylrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,51 +42,55 @@ Fixed::~Fixed(){
 
 //~operator functions~
 
-Fixed&	Fixed::operator>(const Fixed &rhs){
-
+bool	Fixed::operator>(const Fixed& rhs) const {
+	return (this->_fixed > rhs._fixed);
 }
 
-Fixed&	Fixed::operator<(const Fixed &rhs){
-
+bool	Fixed::operator<(const Fixed& rhs) const {
+	return (this->_fixed < rhs._fixed);
 }
 
-Fixed&	Fixed::operator>=(const Fixed &rhs){
-
+bool	Fixed::operator>=(const Fixed& rhs) const {
+	return (this->_fixed >= rhs._fixed);
 }
 
-Fixed&	Fixed::operator<=(const Fixed &rhs){
-
+bool	Fixed::operator<=(const Fixed& rhs) const {
+	return (this->_fixed <= rhs._fixed);
 }
 
-Fixed&	Fixed::operator==(const Fixed &rhs){
-
+bool	Fixed::operator==(const Fixed& rhs) const {
+	return (this->_fixed == rhs._fixed);
 }
 
-Fixed&	Fixed::operator!=(const Fixed &rhs){
-
+bool	Fixed::operator!=(const Fixed& rhs) const {
+	return (this->_fixed != rhs._fixed);
 }
 
 Fixed&	Fixed::operator=(const Fixed &rhs){
 	std::cout << "Copy assignment operator called" << std::endl;
 		if (this != &rhs)
 			_fixed = rhs._fixed;
-		return *this;
+		return (*this);
 }
 
 Fixed&	Fixed::operator+(const Fixed &rhs){
-
+	this->_fixed += rhs._fixed;
+	return (*this);
 }
 
 Fixed&	Fixed::operator-(const Fixed &rhs){
-
+	this->_fixed -= rhs._fixed;
+	return (*this);
 }
 
 Fixed&	Fixed::operator*(const Fixed &rhs){
-
+	this->_fixed *= rhs._fixed;
+	return (*this);
 }
 
 Fixed&	Fixed::operator/(const Fixed &rhs){
-
+	this->_fixed /= rhs._fixed;
+	return (*this);
 }
 
 //~other class functions~
@@ -107,20 +111,30 @@ int		Fixed::toInt() const{
 	return (this->_fixed >> _fract);
 }
 
-std::string&	Fixed::min(std::string& nb1, std::string& nb2){
+//~min/max~
 
+Fixed&	Fixed::min(Fixed& a, Fixed& b){
+	if (a < b)
+		return (a);
+	return (b);
 }
 
-const std::string&	Fixed::minconst(const std::string& nb1, const std::string& nb2){
-
+const Fixed&	Fixed::min(const Fixed& a, const Fixed& b){
+	if (a < b)
+		return (a);
+	return (b);
 }
 
-std::string&	Fixed::max(std::string& nb1, std::string& nb2){
-
+Fixed&	Fixed::max(Fixed& a, Fixed& b){
+	if (a > b)
+		return (a);
+	return (b);
 }
 
-const std::string&	Fixed::maxconst(const std::string& nb1, const std::string& nb2){
-
+const Fixed&	Fixed::max(const Fixed& a, const Fixed& b){
+	if (a > b)
+		return (a);
+	return (b);
 }
 
 //~outside functions~
