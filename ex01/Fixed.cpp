@@ -6,7 +6,7 @@
 /*   By: lylrandr <lylrandr@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 17:41:47 by lylrandr          #+#    #+#             */
-/*   Updated: 2026/01/13 15:14:10 by lylrandr         ###   ########.fr       */
+/*   Updated: 2026/01/13 15:29:21 by lylrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ Fixed::Fixed(const int value){
 }
 
 Fixed::~Fixed(){
-	std::cout << "Destructor called." << std::endl;
+	std::cout << "Destructor called" << std::endl;
 }
 
 //~class functions~

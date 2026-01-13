@@ -6,14 +6,13 @@
 /*   By: lylrandr <lylrandr@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 13:34:37 by lylrandr          #+#    #+#             */
-/*   Updated: 2025/12/22 19:07:46 by lylrandr         ###   ########.fr       */
+/*   Updated: 2026/01/13 15:34:39 by lylrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
 #define FIXED_HPP
 
-# include <string>
 # include <iostream>
 # include <cmath>
 # include <iosfwd>
