@@ -6,43 +6,33 @@
 #    By: lylrandr <lylrandr@student.42lausanne.ch>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/16 17:39:55 by lylrandr          #+#    #+#              #
-#    Updated: 2025/12/18 13:30:33 by lylrandr         ###   ########.fr        #
+#    Updated: 2026/01/13 15:14:38 by lylrandr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
 
 NAME = Fixed
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRC_DIR = src
-SRC = $(shell find $(SRC_DIR) -type f -name "*.cpp")
-OBJDIR = obj
-OBJS = $(SRC:src/%.cpp=$(OBJDIR)/%.o)
-DEPS = $(OBJS:.o=.d)
+SRC = main.cpp Fixed.cpp
+OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	@$(CC) $(OBJS) -o $@ $(CFLAGS)
+$(NAME): $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
-$(OBJDIR)/%.o: src/%.cpp
-# Crée le sous-dossier si nécessaire
-	@mkdir -p $(dir $@)
-	@$(CC) $(CFLAGS) -MMD -c $< -o $@
-
-# S'assurer que obj/ existe
-$(OBJDIR):
-	@mkdir -p $(OBJDIR)
-
--include $(DEPS)
+%.o: %.cpp
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	@rm -f $(OBJS) $(DEPS)
+	rm -f $(OBJ)
 
 fclean: clean
-	@rm -f $(NAME)
-	@rm -rf $(OBJDIR)
+	rm -f $(NAME)
 
 re: fclean all
 
 .PHONY: all clean fclean re
+

@@ -5,23 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lylrandr <lylrandr@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/18 19:02:25 by lylrandr          #+#    #+#             */
-/*   Updated: 2025/12/22 19:08:20 by lylrandr         ###   ########.fr       */
+/*   Created: 2025/12/16 17:41:31 by lylrandr          #+#    #+#             */
+/*   Updated: 2026/01/13 15:15:19 by lylrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Fixed.hpp"
+#include "Fixed.hpp"
 
 int main() {
 	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+	Fixed b( a );
+	Fixed c;
+	c = b;
+	std::cout << a.getRawBits() << std::endl;
+	std::cout << b.getRawBits() << std::endl;
+	std::cout << c.getRawBits() << std::endl;
 
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
-	return 0;
+	a.setRawBits(2);
+	b.setRawBits(3);
+	c.setRawBits(4);
+
+	std::cout << a.getRawBits() << std::endl;
+	std::cout << b.getRawBits() << std::endl;
+	std::cout << c.getRawBits() << std::endl;
+	return (0);
 }

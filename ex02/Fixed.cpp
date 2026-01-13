@@ -6,11 +6,11 @@
 /*   By: lylrandr <lylrandr@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 17:41:47 by lylrandr          #+#    #+#             */
-/*   Updated: 2026/01/08 16:23:38 by lylrandr         ###   ########.fr       */
+/*   Updated: 2026/01/13 15:13:43 by lylrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Fixed.hpp"
+#include "Fixed.hpp"
 
 const int	Fixed::_fract = 8;
 
