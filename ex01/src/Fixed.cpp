@@ -6,7 +6,7 @@
 /*   By: lylrandr <lylrandr@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 17:41:47 by lylrandr          #+#    #+#             */
-/*   Updated: 2025/12/18 18:59:47 by lylrandr         ###   ########.fr       */
+/*   Updated: 2026/01/08 16:07:50 by lylrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ const int	Fixed::_fract = 8;
 //~constructors / destructor~
 
 Fixed::Fixed() : _fixed(0) {
-	std::cout << "Default constructor called." << std::endl;
+	std::cout << "Default constructor called" << std::endl;
 
 }
 
